@@ -1,0 +1,10 @@
+{
+  "/jbugs/jbugs-api/*": {
+    "target": "http://localhost:8181/",
+    "secure": false
+  },
+  "/jbugs/login/*": {
+    "target": "http://localhost:8181/",
+    "secure": false
+  }
+}
