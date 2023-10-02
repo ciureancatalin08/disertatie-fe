@@ -284,7 +284,7 @@ public class UserControl {
 
     }
 
-    public void updateUser(UserUpdateDTO userUpdateDTO) {
+    public void updateUser(UserUpdateDTOm userUpdateDTO) {
         UserEntity userToUpdate = userDao.getUserByEmail(userUpdateDTO.getEmailBeforeUpdate());
         userToUpdate.setFirstName(userUpdateDTO.getFirstName());
         userToUpdate.setLastName(userUpdateDTO.getLastName());

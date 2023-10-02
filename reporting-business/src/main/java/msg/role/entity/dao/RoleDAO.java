@@ -23,7 +23,7 @@ public class RoleDAO {
 
     @PersistenceContext(unitName = "persistenceUnit", type = PersistenceContextType.TRANSACTION)
     private EntityManager em;
-    public List<RoleEntity> getRolesByTypeList(final List<String> typeList) {
+    public List<RoleEntity>  getRolesByTypeList(final List<String> typeList) {
         return em.createNamedQuery(RoleEntity.QUERY_GET_ROLES_BY_TYPE_LIST, RoleEntity.class)
                 .setParameter(RoleEntity.INPUT_TYPE_LIST, typeList)
                 .getResultList();
