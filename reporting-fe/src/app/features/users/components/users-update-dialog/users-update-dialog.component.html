@@ -52,7 +52,7 @@
 
   <div>
     <mat-form-field>
-      <mat-select formControlName="newRoles" multiple placeholder="Roles" required>
+      <mat-select [(ngModel)]="user.roles" formControlName="newRoles" multiple placeholder="Roles" required>
         <mat-option *ngFor="let role of roles" [value]="role" (click)="handleRoleSelected(role)">{{role}}</mat-option>
       </mat-select>
     </mat-form-field>

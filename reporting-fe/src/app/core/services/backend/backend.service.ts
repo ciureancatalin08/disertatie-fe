@@ -52,7 +52,6 @@ export class BackendService {
    * @param others additional attrs
    */
   public post(url: string, data: any, params?: any, others?: any): Observable<any> {
-    console.log(data);
 
     return this.invoke('POST', url, data, params, others);
   }

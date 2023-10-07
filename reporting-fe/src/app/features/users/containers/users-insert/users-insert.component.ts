@@ -36,19 +36,16 @@ export class UsersInsertComponent implements OnInit {
 
 
   insert() {
-    console.log(this.user);
-    this.userService.insertUser(this.user).subscribe((
-        value => {
-          this.onNoClick();
-          this.router.navigate(['/dashboard/users'])
-        }),
-      (error => {
-        alert(error.error.message)
-      }),
+    this.userService.insertUser(this.user).subscribe(
       () => {
-
-      })
-    ;
+        this.onNoClick();
+        this.router.navigate(['/dashboard/users']);
+      },
+      error => {
+        console.log('hier');
+        console.log(error)
+        alert(error);
+      });
   }
 
   onNoClick(): void {
