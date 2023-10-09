@@ -50,5 +50,4 @@ export class BugAddComponent implements OnInit {
     this.dialogRef.close();
   }
 
-
 }

@@ -16,19 +16,6 @@ export class UsersService {
   constructor(private backendService: BackendService) {
   }
 
-  loadUserByUsername(username: number): Observable<User> {
-    console.log(`${environment.baseUrl}/${this.usersEndpoint}/${username}`);
-    return this.backendService
-      .get(`${environment.baseUrl}/${this.usersEndpoint}`);
-  }
-
-  loadUserById(id: number): Observable<User> {
-    return this.backendService
-      .get(`${environment.baseUrl}/${this.usersEndpoint}/${id}`)
-      .pipe(map((result: UserJSON) => User.fromJSON(result)));
-
-  }
-
   insertUser(user: User): Observable<any> {
     return this.backendService
       .post(`jbugs/jbugs-api/users/insert`, user, {responseType: 'text'});
@@ -43,21 +30,8 @@ export class UsersService {
     return this.backendService.get(`${environment.baseUrl}/${this.usersEndpoint}`);
   }
 
-  // loadUserByUsername(username: string): Observable<User> {
-  //   return this.backendService
-  //     .get(`${environment.baseUrl}/${this.usersEndpoint}/${username}`)
-  //     .pipe(map((result: UserJSON) => User.fromJSON(result)));
-  // }
   updateUser(user: UserUpdate): Observable<any> {
     return this.backendService.patch(`${environment.baseUrl}/${this.usersEndpoint}`, user);
-  }
-
-  deactivateUser(id: number): Observable<any> {
-    return this.backendService.delete(`${environment.baseUrl}/${this.usersEndpoint}/${id}`);
-  }
-
-  changePassword(newPassword: UserChangePasswordDTO) {
-    return this.backendService.patch(`${environment.baseUrl}/${this.usersEndpoint}/password`, newPassword);
   }
 
   loadAllUsers(): Observable<User[]> {
