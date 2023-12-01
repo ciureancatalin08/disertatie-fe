@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {DialogData, LoginFormComponent} from "../login-form/login-form.component";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {DialogData, LoginFormComponent} from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-dialog',

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import * as jwt_decode from "jwt-decode";
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +17,12 @@ export class AuthenticationService {
 
   public getUserId() {
     let token = localStorage.getItem('api-token');
-    return (this.decode(token).id)
+    return (this.decode(token).id);
   }
 
   public getUserName() {
     let token = localStorage.getItem('api-token');
-    return (this.decode(token).username)
+    return (this.decode(token).username);
   }
 
   public getToken() {

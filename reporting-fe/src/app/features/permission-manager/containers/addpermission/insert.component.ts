@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {PermissionManagerServices} from '../../services/permission-manager.services';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {PermissionManagerInsertButtonComponent} from '../../components/permission-manager-firstpage/permission-manager-firstpage.component';
 import {Permission, Role} from '../../model/permission-manager.model';
 
 interface DialogData {
@@ -19,7 +18,7 @@ export class InsertComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private permissionManagerService: PermissionManagerServices,
-    private dialogRef: MatDialogRef<PermissionManagerInsertButtonComponent>
+    private dialogRef: MatDialogRef<PermissionManagerServices>
   ) {
   }
 

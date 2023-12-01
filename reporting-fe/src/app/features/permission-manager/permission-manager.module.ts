@@ -1,7 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {PermissionRoutingModule} from "./permission-manager-routing.module";
-import {PermissionManagerInsertButtonComponent} from "./components/permission-manager-firstpage/permission-manager-firstpage.component";
+import {PermissionRoutingModule} from './permission-manager-routing.module';
+import {InsertComponent} from './containers/addpermission/insert.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {PermissionManagerInsertComponent} from './containers/permission-manager/permission-manager.component';
+
+
 import {
   MatButtonModule,
   MatButtonToggleModule,
@@ -15,15 +19,11 @@ import {
   MatOptionModule,
   MatRadioModule,
   MatSelectModule
-} from "@angular/material";
-import {InsertComponent} from "./containers/addpermission/insert.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {PermissionManagerInsertComponent} from './containers/permission-manager/permission-manager.component';
+} from '@angular/material';
 
 @NgModule({
   declarations: [
     PermissionManagerInsertComponent,
-    PermissionManagerInsertButtonComponent,
     InsertComponent,
   ],
   entryComponents: [

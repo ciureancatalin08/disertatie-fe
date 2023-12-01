@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PermissionManagerInsertComponent} from "./containers/permission-manager/permission-manager.component";
-import {InsertComponent} from "./containers/addpermission/insert.component";
+import {PermissionManagerInsertComponent} from './containers/permission-manager/permission-manager.component';
+import {InsertComponent} from './containers/addpermission/insert.component';
 
 const routes: Routes = [
   {
