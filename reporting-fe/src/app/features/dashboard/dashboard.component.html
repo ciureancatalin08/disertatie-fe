@@ -11,7 +11,6 @@
   <button [matMenuTriggerFor]="menu" class="menu" mat-button i18n="Menu|The button for Menu">Menu</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="bugs/statistics" routerLinkActive="active current">View Bugs Statistics</button>
-    <button mat-menu-item routerLink="notifications" routerLinkActive="active current">View notifications</button>
     <button mat-menu-item routerLink="view-profile" routerLinkActive="active current">Change password</button>
     <button (click)="logout()" mat-menu-item>Logout</button>
   </mat-menu>

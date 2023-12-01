@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {BugsComponent} from "./containers/bugs/bugs.component";
+import {BugsComponent} from "./bugs.component";
 
-import {BugAddComponent} from "./containers/bug-add/bug-add.component";
+import {BugAddComponent} from "./components/bug-add/bug-add.component";
 import {BugsStatisticsComponent} from "./components/bugs-statistics/bugs-statistics.component";
 
 const routes: Routes = [

@@ -2,11 +2,8 @@
 
   <mat-card class="example-card">
 
-  <mat-card-title i18n="insertbutton|Inserting a bug">Insert Bug</mat-card-title>
-
-
+    <mat-card-title i18n="insertbutton|Inserting a bug">Insert Bug</mat-card-title>
     <mat-divider></mat-divider>
-    <!--  <mat-card-content>-->
     <br>
 
     <mat-form-field class="form-group">
@@ -39,7 +36,7 @@
              required
              type="text">
       <mat-error
-           *ngIf="description.touched && description.invalid">
+        *ngIf="description.touched && description.invalid">
         <mat-error *ngIf="description.errors.required" i18n="fieldrequired|The field is required">The field is
           required
         </mat-error>
@@ -55,14 +52,11 @@
              id="version"
              name="version"
              ngModel
-             pattern="^[a-zA-Z]*[0-9].[0-9]"
              required
-             #version ="ngModel">
-      <div class ="alert alert-danger"
+             #version="ngModel">
+      <div class="alert alert-danger"
            *ngIf="version.touched && version.invalid">
         <div *ngIf="version.errors.required" i18n="fieldrequired|The field is required">The field is required</div>
-        <div *ngIf="version.errors.pattern" i18n="peterninvalid|The patern is invalid">The pattern is invalid</div>
-
       </div>
     </div>
 
@@ -87,19 +81,18 @@
              type="text">
 
     </div>
-
     <mat-form-field>
       <mat-label>Severity</mat-label>
 
-    <select matNativeControl
-            [(ngModel)] = "bug.severity"
-            name="severity"
-            ngModel required>
-      <option value="Low" i18n="low|The field is low">Low</option>
-      <option value="Medium" i18n="medium|The field is medium">Medium</option>
-      <option value="High" i18n="high|The field is high">High</option>
-      <option value="Critical" i18n="critical|The field is critical">Critical</option>
-    </select>
+      <select matNativeControl
+              [(ngModel)]="bug.severity"
+              name="severity"
+              ngModel required>
+        <option value="Low" i18n="low|The field is low">Low</option>
+        <option value="Medium" i18n="medium|The field is medium">Medium</option>
+        <option value="High" i18n="high|The field is high">High</option>
+        <option value="Critical" i18n="critical|The field is critical">Critical</option>
+      </select>
     </mat-form-field>
 
     <mat-form-field>
@@ -107,32 +100,17 @@
       <mat-select [(ngModel)]="bug.ASSIGNED_ID"
                   name="roles"
                   ngModel>
-        <mat-option *ngFor="let user of usersList" [value]="user.id">{{user.userName}}</mat-option>
+        <mat-option *ngFor="let user of usersList" [value]="user.id">{{user.firstName}}</mat-option>
       </mat-select>
-
-
     </mat-form-field>
-
-
-    <!--  </mat-card-content>-->
     <mat-card-actions>
-
-
     </mat-card-actions>
   </mat-card>
 
   <button (click)="insert()"
           [disabled]="f.invalid"
           mat-raised-button>
-
-
     Submit
   </button>
-
-
-  <!--<p>-->
-  <!--  {{f.value | json}}-->
-  <!--</p>-->
-
 </form>
 

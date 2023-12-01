@@ -1,15 +1,16 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Bug} from "../../models/bugs.model";
-import {BugsService} from "../../services/bugs.service";
+import {Bug} from '../../models/bugs.model';
+import {BugsService} from '../../services/bugs.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
-import {MatDialog, MatPaginator} from "@angular/material";
-import {BugEditComponent} from "../../containers/bug-edit/bug-edit.component";
-import {BugViewComponent} from "../../containers/bug-view/bug-view.component";
+import {MatDialog, MatPaginator} from '@angular/material';
+import {BugEditComponent} from '../bug-edit/bug-edit.component';
+import {BugViewComponent} from '../bug-view/bug-view.component';
 import * as XLSX from 'xlsx';
 import html2canvas from 'html2canvas';
 import * as jspdf from 'jspdf';
-import {AuthenticationService} from "../../../../core/services/authentication/authentication.service";
+import {AuthenticationService} from '../../../../core/services/authentication/authentication.service';
+import {BugAddComponent} from '../bug-add/bug-add.component';
 
 @Component({
   selector: 'app-bugs-table-component',
@@ -17,7 +18,7 @@ import {AuthenticationService} from "../../../../core/services/authentication/au
   styleUrls: ['./bugs-table-component.component.css']
 })
 export class BugsTableComponentComponent implements OnInit {
-  displayedColumns: string[] = ["title", "description", "version", "targetDate", "status", "fixedVersion", "severity", "edit"];
+  displayedColumns: string[] = ['title', 'description', 'version', 'targetDate', 'status', 'fixedVersion', 'severity', 'edit'];
 
   bugs: Bug[];
   bugEdit: Bug = new Bug();
@@ -46,13 +47,11 @@ export class BugsTableComponentComponent implements OnInit {
 
   }
 
-
   getRecord(bug: Bug) {
     this.bugEdit = bug;
-    console.log(this.bugEdit.status);
 
     for (let per of this.authenticationService.getPermissions()) {
-      if (per === "BUG_CLOSE") {
+      if (per === 'BUG_CLOSE') {
         this.permissonClosed = true;
       }
     }
@@ -68,7 +67,6 @@ export class BugsTableComponentComponent implements OnInit {
           data: this.bugEdit
         });
         dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
           this.ngOnInit();
         });
 
@@ -85,7 +83,6 @@ export class BugsTableComponentComponent implements OnInit {
           data: this.bugEdit
         });
         dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
           this.ngOnInit();
         });
 
@@ -114,7 +111,7 @@ export class BugsTableComponentComponent implements OnInit {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, worksheet, 'Sheet1');
     /* save to file */
-    XLSX.writeFile(wb, "Bugs.xlsx");
+    XLSX.writeFile(wb, 'Bugs.xlsx');
   }
 
   public generatePDF() {
@@ -141,18 +138,39 @@ export class BugsTableComponentComponent implements OnInit {
   }
 
   showButton(): boolean {
-    if (this.authenticationService.getPermissions() === null) return false;
-    for (let per of this.authenticationService.getPermissions())
-      if (per === "BUG_MANAGEMENT") return true;
+    if (this.authenticationService.getPermissions() === null) {
+      return false;
+    }
+    for (let per of this.authenticationService.getPermissions()) {
+      if (per === 'BUG_MANAGEMENT') {
+        return true;
+      }
+    }
     return false;
   }
 
   showButton2(): boolean {
-    if (this.authenticationService.getPermissions() === null) return false;
+    if (this.authenticationService.getPermissions() === null) {
+      return false;
+    }
     for (let per of this.authenticationService.getPermissions()) {
-      if (per === "BUG_EXPORT_PDF") return true;
+      if (per === 'BUG_EXPORT_PDF') {
+        return true;
+      }
     }
     return false;
+  }
+
+  addDialog() {
+    const dialogRef = this.dialog.open(BugAddComponent, {
+      width: '650px',
+      height: '660px'
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.ngOnInit();
+    });
   }
 }
 

@@ -32,10 +32,6 @@ const routes: Routes = [
 
       },
       {
-        path: 'notifications',
-        loadChildren: 'src/app/features/notifications/notifications.module#NotificationsModule'
-      },
-      {
         path: 'view-profile',
         loadChildren: 'src/app/features/view-profile/view-profile.module#ViewProfileModule'
       },

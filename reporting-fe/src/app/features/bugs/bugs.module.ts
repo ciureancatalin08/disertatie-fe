@@ -3,10 +3,15 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 import {CommonModule} from '@angular/common';
-import {BugsComponent} from "./containers/bugs/bugs.component";
-import {BugsRoutingModule} from "./bugs-routing.module";
+import {BugsComponent} from './bugs.component';
+import {BugsRoutingModule} from './bugs-routing.module';
 import {BugsTableComponentComponent} from './components/bugs-table-component/bugs-table-component.component';
 import {ChartsModule} from 'ng2-charts';
+import {BugAddComponent} from './components/bug-add/bug-add.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BugEditComponent} from './components/bug-edit/bug-edit.component';
+import {BugViewComponent} from './components/bug-view/bug-view.component';
+import {BugsStatisticsComponent} from './components/bugs-statistics/bugs-statistics.component';
 import {
   MatButtonModule,
   MatButtonToggleModule,
@@ -20,20 +25,14 @@ import {
   MatSortModule,
   MatTableModule,
   NativeDateModule,
-} from "@angular/material";
-import {BugAddComponent} from './containers/bug-add/bug-add.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BugDialogAddComponent} from './components/bug-dialog-add/bug-dialog-add.component';
-import {BugEditComponent} from './containers/bug-edit/bug-edit.component';
-import {BugViewComponent} from "./containers/bug-view/bug-view.component";
-import {BugsStatisticsComponent} from './components/bugs-statistics/bugs-statistics.component';
+} from '@angular/material';
+
 
 @NgModule({
   declarations: [
     BugsComponent,
     BugsTableComponentComponent,
     BugAddComponent,
-    BugDialogAddComponent,
     BugEditComponent,
     BugViewComponent,
     BugsStatisticsComponent

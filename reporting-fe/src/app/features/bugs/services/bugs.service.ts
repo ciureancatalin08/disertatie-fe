@@ -25,9 +25,8 @@ export class BugsService {
   }
 
   insertBug(bug: Bug): Observable<any> {
-    // console.log(bug)
     return this.backendService
-      .post(`jbugs/jbugs-api/bugs`, bug)
+      .post(`jbugs/jbugs-api/bugs`, bug);
 
   }
 

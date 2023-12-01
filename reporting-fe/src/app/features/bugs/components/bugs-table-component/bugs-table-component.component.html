@@ -1,5 +1,9 @@
 <div>
-  <app-bug-dialog-add></app-bug-dialog-add>
+  <button mat-raised-button
+          type="button"
+          (click)="addDialog()"
+          [disabled]="" i18n="@@templatesTitle">Add
+  </button>
 <div class = "test" *ngIf="showButton()">
   <mat-button-toggle-group  ng-click name="fontStyle" aria-label="Font Style">
     <button mat-raised-button i18n="export|The export button" (click)="export()">Download Excel</button>
@@ -69,8 +73,6 @@
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
 </div>
-<!--<button (click)="export()" >ExportinXls</button>-->
 
 </div>
