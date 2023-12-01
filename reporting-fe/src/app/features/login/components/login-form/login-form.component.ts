@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginInput} from "../../models/loginInput.model";
-import {LoginService} from "../../services/login.service";
-import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material";
-import {DialogComponent} from "../dialog/dialog.component";
-import {AuthenticationService} from "../../../../core/services/authentication/authentication.service";
-
+import {LoginInput} from '../../models/loginInput.model';
+import {LoginService} from '../../services/login.service';
+import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material';
+import {DialogComponent} from '../dialog/dialog.component';
+import {AuthenticationService} from '../../../../core/services/authentication/authentication.service';
 
 export interface DialogData {
-  animal: string;
   name: string;
 }
 
@@ -28,28 +26,26 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
   }
+
   sendCredentials() {
-    var that = this;
+    const that = this;
     this.loginService.loginUser(this.loginInput)
       .subscribe(
-        function (result) {
+        function(result) {
           localStorage.setItem('api-token', result.token);
           that.dialog.open(DialogComponent, {
             width: '250px',
-            data: {name: "Hello " + that.authenticationService.getUserName()}
+            data: {name: 'Hello ' + that.authenticationService.getUserName()}
           });
-          that.router.navigate(['/dashboard'])
-
+          that.router.navigate(['/dashboard']);
         },
         error => {
           console.log(error);
           that.dialog.open(DialogComponent, {
             width: '250px',
             data: {name: error.error.message}
-          })
+          });
         }
       );
-
   }
-
 }

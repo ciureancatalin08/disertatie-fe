@@ -7,18 +7,10 @@ import {DialogData, LoginFormComponent} from '../login-form/login-form.component
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<LoginFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  ngOnInit() {
-  }
-
 }

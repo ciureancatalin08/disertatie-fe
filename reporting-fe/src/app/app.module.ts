@@ -20,7 +20,7 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import {DashboardComponent} from "./features/dashboard/dashboard.component";
-import {LoginComponent} from "./features/login/containers/login/login.component";
+import {LoginComponent} from "./features/login/login.component";
 import {LoginModule} from "./features/login/login.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 

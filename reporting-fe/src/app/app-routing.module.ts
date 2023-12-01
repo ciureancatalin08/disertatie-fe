@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {DashboardComponent} from "./features/dashboard/dashboard.component";
-import {LoginComponent} from "./features/login/containers/login/login.component";
+import {LoginComponent} from "./features/login/login.component";
 import {RoleGuardService} from "./core/services/role-guard/role-guard.service";
 import {LoginGuardService} from "./core/services/login-guard/login-guard.service";
 import {BugsStatisticsComponent} from "./features/bugs/components/bugs-statistics/bugs-statistics.component";
