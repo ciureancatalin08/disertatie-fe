@@ -19,15 +19,14 @@ export class LoginGuardService {
     if (this.authenticationService.getToken() !== null) {
       const found = this.authenticationService.getPermissions().some(r => next.data.permission.indexOf(r) >= 0);
       if (found === true) {
-        console.log(found);
-        return true
+        return true;
       } else {
         this.router.navigate(['/login']);
-        return false
+        return false;
       }
     } else {
       this.router.navigate(['/login']);
-      return false
+      return false;
     }
 
   }

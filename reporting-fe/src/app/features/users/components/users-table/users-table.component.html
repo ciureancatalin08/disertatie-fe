@@ -1,4 +1,3 @@
-<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
 <table [dataSource]="dataSource" mat-table>
 
   <!--- Note that these columns can be defined in any order.
@@ -39,7 +38,6 @@
     <th *matHeaderCellDef mat-header-cell i18n="@@templatesTitle"> Actions</th>
     <td *matCellDef="let user" mat-cell>
       <button (click)="editButtonClicked(user)" mat-button i18n="@@templatesTitle">Edit</button>
-      <button (click)="deactivateButtonClicked(user)" mat-button i18n="@@templatesTitle">Deactivate</button>
     </td>
   </ng-container>
 

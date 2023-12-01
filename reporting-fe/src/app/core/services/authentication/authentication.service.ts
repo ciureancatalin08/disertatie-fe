@@ -12,7 +12,7 @@ export class AuthenticationService {
   public getPermissions() {
 
     let token = localStorage.getItem('api-token');
-    return (this.decode(token).permissions)
+    return (this.decode(token).permissions);
   }
 
   public getUserId() {

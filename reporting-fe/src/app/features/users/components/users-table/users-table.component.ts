@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {User, UserUpdate} from "../../models/users.model";
-import {UsersService} from "../../services/users.service";
-import {MatDialog, MatDialogConfig, MatSnackBar} from "@angular/material";
-import {UsersUpdateDialogComponent} from "../users-update-dialog/users-update-dialog.component";
+import {User, UserUpdate} from '../../models/users.model';
+import {UsersService} from '../../services/users.service';
+import {MatDialog, MatDialogConfig, MatSnackBar} from '@angular/material';
+import {UsersUpdateDialogComponent} from '../users-update-dialog/users-update-dialog.component';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {UsersUpdateDialogComponent} from "../users-update-dialog/users-update-di
   styleUrls: ['./users-table.component.css']
 })
 export class UsersTableComponent {
-  displayedColumns: string[] = ["id", "firstName", "lastName", "email", "mobileNumber", "actions"];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'mobileNumber', 'actions'];
 
   @Input()
   dataSource: User[];
@@ -38,19 +38,7 @@ export class UsersTableComponent {
       }
     });
   }
-
   editButtonClicked(user: User) {
     this.openDialog(user);
-  }
-
-  deactivateButtonClicked(user: User) {
-    this.userService.deactivateUser(user.id)
-      .subscribe(any => {
-          window.location.reload();
-        },
-        error1 => {
-          this.snackbar.open("ERROR: " + error1.error.message, null, {duration: 2000});
-        }
-      );
   }
 }

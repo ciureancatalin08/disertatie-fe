@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {User} from "../../models/users.model";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {User} from '../../models/users.model';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-users-update-dialog',
@@ -12,7 +12,7 @@ export class UsersUpdateDialogComponent implements OnInit {
 
   form: FormGroup;
   user: User;
-  roles: string[] = ["ADMINISTRATOR", "PROJECT MANAGER", "TEST MANAGER", "DEVELOPER", "TESTER"];
+  roles: string[] = ['ADMINISTRATOR', 'PROJECT MANAGER', 'TEST MANAGER', 'DEVELOPER', 'TESTER'];
   selectedRoles: string[] = [];
 
   constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<UsersUpdateDialogComponent>, @Inject(MAT_DIALOG_DATA) data) {
