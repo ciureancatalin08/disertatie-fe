@@ -20,7 +20,6 @@ export class LoginFormComponent implements OnInit {
 
   public loginInput: LoginInput = new LoginInput();
 
-
   constructor(public dialog: MatDialog, private router: Router, private loginService: LoginService, private authenticationService: AuthenticationService) {
   }
 

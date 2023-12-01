@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UsersService} from "../../services/users.service";
-import {User} from "../../models/users.model";
+import {User} from './models/users.model';
+import {UsersService} from './services/users.service';
+
 
 @Component({
   selector: 'app-users',
@@ -27,6 +28,6 @@ export class UsersComponent implements OnInit {
       .subscribe(
         users => this.users = users,
         error => alert(error)
-      )
+      );
   }
 }

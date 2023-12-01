@@ -2,10 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UsersService} from '../../services/users.service';
 import {Role, User} from '../../models/users.model';
-import {UsersInsertButtonComponent} from '../../components/users-insert-button/users-insert-button.component';
 import {MatDialogRef} from '@angular/material';
-import {UsersTableComponent} from '../../components/users-table/users-table.component';
-import {UsersComponent} from '../users/users.component';
+import {UsersInsertButtonComponent} from '../users-insert-button/users-insert-button.component';
 
 
 @Component({
@@ -42,7 +40,5 @@ export class UsersInsertComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
-
 }
 

@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UsersInsertComponent} from '../../containers/users-insert/users-insert.component';
 import {MatDialog} from '@angular/material';
 import {User} from '../../models/users.model';
 import {AuthenticationService} from '../../../../core/services/authentication/authentication.service';
+import {UsersInsertComponent} from '../insert-user/users-insert.component';
 
 @Component({
   selector: 'app-users-insert-button',
