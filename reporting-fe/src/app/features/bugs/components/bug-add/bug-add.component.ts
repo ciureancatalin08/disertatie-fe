@@ -4,7 +4,6 @@ import {BugsService} from '../../services/bugs.service';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../../core/services/authentication/authentication.service';
 import {MatDialogRef} from '@angular/material';
-import {BugDialogAddComponent} from '../bug-dialog-add/bug-dialog-add.component';
 import {User} from '../../../users/models/users.model';
 import {UsersService} from '../../../users/services/users.service';
 
@@ -20,7 +19,7 @@ export class BugAddComponent implements OnInit {
   public bug: Bug = new Bug();
   usersList: User[];
 
-  constructor(private bugService: BugsService, private router: Router, public dialogRef: MatDialogRef<BugDialogAddComponent>,
+  constructor(private bugService: BugsService, private router: Router, public dialogRef: MatDialogRef<BugAddComponent>,
               public permissionService: AuthenticationService, private userService: UsersService) {
   }
 
