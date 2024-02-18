@@ -26,13 +26,13 @@ export class BugsService {
 
   insertBug(bug: Bug): Observable<any> {
     return this.backendService
-      .post(`jbugs/jbugs-api/bugs`, bug);
+      .post(`${environment.baseUrl}/bugs`, bug);
 
   }
 
   editBug(bug: Bug): Observable<any> {
     return this.backendService
-      .put(`jbugs/jbugs-api/bugs`, bug);
+      .put(`${environment.baseUrl}/bugs`, bug);
   }
 
   getStatusComplete(status: string): Observable<any> {

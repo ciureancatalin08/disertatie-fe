@@ -19,7 +19,7 @@ export class LoginService {
 
   loginUser(loginInput: LoginInput): Observable<User> {
     return this.backendService
-      .post(`${environment.loginUrl}/${this.loginEndpoint}/`, loginInput)
+      .post(`${environment.loginUrl}/${this.loginEndpoint}`, loginInput)
       .pipe(map((result: User) => User.fromJSON(result)));
   }
 }

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: '/jbugs/jbugs-api',
-  loginUrl: '/jbugs/login',
+  baseUrl: 'http://localhost:8080/jbugs/jbugs-api',
+  loginUrl: 'http://localhost:8080/jbugs/login',
 };
 
 /*

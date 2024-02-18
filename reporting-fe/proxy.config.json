@@ -1,10 +1,12 @@
 {
-  "/jbugs/jbugs-api/*": {
-    "target": "http://localhost:8181/",
+  "/jbugs/jbug1s-api/*": {
+    "target": "http://localhost:8080/",
     "secure": false
   },
-  "/jbugs/login/*": {
-    "target": "http://localhost:8181/",
-    "secure": false
+  "/jbugs/logi1n/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 }

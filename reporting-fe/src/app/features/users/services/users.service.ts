@@ -31,7 +31,7 @@ export class UsersService {
 
   insertUser(user: User): Observable<any> {
     return this.backendService
-      .post(`jbugs/jbugs-api/users/insert`, user, {responseType: 'text'});
+      .post(`${environment.baseUrl}/users/insert`, user, {responseType: 'text'});
 
   }
 
